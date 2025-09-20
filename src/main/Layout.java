@@ -7,12 +7,15 @@ import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Layout extends JFrame {
 	public Layout(int opcao) {
 		super("Layouts");
 		
 		Container c = getContentPane();
+		Container c2 = new JPanel();
+
 		switch(opcao) {
 		case 1:
 			c.setLayout(new BorderLayout(15,15)); //Adiciona 15px de padding (espaçamento)
@@ -33,7 +36,17 @@ public class Layout extends JFrame {
 			c.add(new JButton("7"));
 			c.add(new JButton("8"));
 			c.add(new JButton("9"));
-
+			break;
+		case 3:
+			c.setLayout(new BorderLayout(10,10));
+			c2.setLayout(new GridLayout(1,3));
+			c.add(BorderLayout.NORTH, new JButton("Nome"));
+			c.add(BorderLayout.CENTER, new JButton("Imagem"));
+			c2.add(new JButton("Play"));
+			c2.add(new JButton("Pause"));
+			c2.add(new JButton("Stop"));
+			c.add(BorderLayout.SOUTH, c2);
+			break;
 		}
 		
 		
@@ -48,6 +61,7 @@ public class Layout extends JFrame {
 		System.out.println("Escolha o layout para ser visualizado:");
 		System.out.println("Border (1)");
 		System.out.println("Grid (2)");
+		System.out.println("Border + Grid (3)");
 		
 		op = entrada.nextInt();
 		new Layout(op);
