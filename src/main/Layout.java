@@ -22,7 +22,17 @@ public class Layout extends JFrame {
 			c.add(BorderLayout.EAST, new JButton("E"));
 			c.add(BorderLayout.WEST, new JButton("W"));
 			break;
-		
+		case 2:
+			c.setLayout(new GridLayout(3,3));
+			c.add(new JButton("1"));
+			c.add(new JButton("2"));
+			c.add(new JButton("3"));
+			c.add(new JButton("4"));
+			c.add(new JButton("5"));
+			c.add(new JButton("6"));
+			c.add(new JButton("7"));
+			c.add(new JButton("8"));
+			c.add(new JButton("9"));
 
 		}
 		
